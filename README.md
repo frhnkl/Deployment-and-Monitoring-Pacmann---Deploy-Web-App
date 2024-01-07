@@ -41,6 +41,17 @@ the purpose of this project is to deploy previous web architecture project, twit
   
 ## Preparing WebApp
 ## Setting up Docker
+- Dockerizing Flask-Backend
+  to be autamatically run, we need to dockerize our backend by creating dockerfile with this
+  ```
+  FROM python:3.10.12-bullseye
+  WORKDIR /app
+  EXPOSE 5000
+  # Installing pip
+  COPY . /app
+  RUN python -m pip install -r requirements.txt
+  CMD ["python", "run.py"]
+  ```
 ## CI/CD Workflow
 ## Web Server Config
 ## Domain and SSL
